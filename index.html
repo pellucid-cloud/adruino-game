@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>躲避障碍 · Tauri Runner</title>
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">TAURI RUNNER</div>
+          <h1>持续前进</h1>
+        </div>
+        <div class="arduino-status" id="arduinoStatus">Arduino：连接中…</div>
+        <div class="stats">
+          <div><span>距离</span><strong id="score">0 m</strong></div>
+          <div><span>速度</span><strong id="speed">1.0x</strong></div>
+        </div>
+      </header>
+
+      <section class="game-shell">
+        <canvas id="game" width="480" height="720" aria-label="躲避障碍小游戏"></canvas>
+
+        <div id="startPanel" class="overlay">
+          <div class="panel-card">
+            <div class="panel-icon">◀ ▶</div>
+            <h2>准备出发</h2>
+            <p>键盘 <b>←</b> <b>→</b> 或 Arduino 左右按钮控制移动。</p>
+            <button id="startBtn">开始游戏</button>
+          </div>
+        </div>
+
+        <div id="gameOverPanel" class="overlay hidden">
+          <div class="panel-card">
+            <div class="panel-icon danger">!</div>
+            <h2>撞上障碍</h2>
+            <p>本次距离：<b id="finalScore">0 m</b></p>
+            <button id="restartBtn">再来一次</button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="hint">
+        <span>← 左移</span>
+        <span>→ 右移</span>
+        <span>Arduino A0 ←</span>
+        <span>Arduino A3 →</span>
+        <span>ESC 暂停</span>
+      </footer>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

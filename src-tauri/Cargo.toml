@@ -1,0 +1,17 @@
+[package]
+name = "tauri-endless-runner"
+version = "0.1.0"
+description = "A Tauri endless runner controlled by keyboard and Arduino"
+authors = ["you"]
+edition = "2021"
+
+[lib]
+name = "tauri_endless_runner_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.0.0", features = [] }
+
+[dependencies]
+tauri = { version = "2.0.0", features = [] }
+serialport = "4.10.1"

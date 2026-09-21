@@ -1,0 +1,14 @@
+# Rust
+target/
+Cargo.lock
+
+# Tauri
+/.tauri
+node_modules
+dist
+dist‑src
+
+# IDE
+.vscode
+*.idea
+*.swp
