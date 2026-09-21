@@ -11,11 +11,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Setup pnpm and Node.js
-        uses: pnpm/setup@v1
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
         with:
           version: 11
-          runtime: node@22
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
 
       - name: Check environment
         run: |
